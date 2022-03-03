@@ -1,18 +1,19 @@
+const data = [9, 5, 3, 1, 6, 7, 9];
 /**
- * This is the bubble sorting algorith.
- * In this we compare the elements which are next to each other and if the element is greater than its
- * neighbour we swap the element.
+ *
+ * @param {object} arr Array of objects with numbers to sort
  */
-function bubbleSortingAlgorithm(unSortedList) {
-  for (let i = 0; i < 7; i++) {
-    if (unSortedList[i] > unSortedList[i + 1]) {
-      let temp = unSortedList[i];
-      unSortedList[i] = unSortedList[i + 1];
-      unSortedList[i + 1] = temp;
+function bubbleSort(arr) {
+  for (let i = 0; i <= arr.length; i++) {
+    for (let j = 0; j < arr.length; j++) {
+      if (arr[j] > arr[j + 1]) {
+        let temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
+      }
     }
   }
-  console.log(unSortedList);
+  console.log(arr); // [ 1, 3, 5, 6, 7, 9, 9 ]
 }
 
-const unSortedList = [45, 10, 36, 1, 87, 6, 9];
-bubbleSortingAlgorithm(unSortedList);
+bubbleSort(data);
